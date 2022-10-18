@@ -1,0 +1,1 @@
+# qake-contract-testing-ajv
