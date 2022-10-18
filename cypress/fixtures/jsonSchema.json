@@ -21,7 +21,7 @@
             "id": {
                 "title": "The id Schema",
                 "description": "An explanation about the purpose of this instance.",
-                "type": "integer"
+                "type": "string"
             },
             "name": {
                 "title": "The name Schema",

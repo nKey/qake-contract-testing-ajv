@@ -7,10 +7,10 @@ describe("Contrato de API com Cypresss", () => {
             cy.fixture("jsonSchema").then((jsonSchema) => {
                 const validate = ajv.compile(jsonSchema);
                 const valid = validate(response.body);
-                if (!valid)
-                    cy.log(validate.errors).then(() => {
-                        throw new Error("Falha do Contrato, ver log acima");
-                    })
+                cy.task('log', valid)
+                if (!valid) {
+                    throw new Error(`Erro encontrado: ${JSON.stringify(validate.errors, null, 4)}`);
+                }
             })
         })
     })
